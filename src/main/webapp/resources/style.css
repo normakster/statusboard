@@ -1,0 +1,31 @@
+.window_control {
+	<!--width: 450px;-->
+	line-height: 25px;
+	border: 1px solid black;
+	padding:5px;
+	margin:5px;
+	background-color: white;
+}
+.heading1 {
+	color:blue;
+}
+.item {
+	width: 150px;
+	line-height: 20px;
+	text-align=center;
+}
+.name {
+	color: green;
+}
+.crntStatus {
+}
+.eta {
+}
+.location {
+}
+.description {
+}
+.buttons {
+	width:10px;
+	border-style: solid;
+}

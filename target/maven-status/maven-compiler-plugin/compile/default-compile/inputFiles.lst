@@ -1,0 +1,12 @@
+/home/normak/dev/learn_space/server/src/main/java/statusBoard/model/Person.java
+/home/normak/dev/learn_space/server/src/main/java/core/Servlet.java
+/home/normak/dev/learn_space/server/src/main/java/util/PrintAction.java
+/home/normak/dev/learn_space/server/src/main/java/core/ServletConfig.java
+/home/normak/dev/learn_space/server/src/main/java/util/PrinterImpl.java
+/home/normak/dev/learn_space/server/src/main/java/statusBoard/model/PersonRepo.java
+/home/normak/dev/learn_space/server/src/main/java/statusBoard/ctr/BoardCtr.java
+/home/normak/dev/learn_space/server/src/main/java/util/Rdr.java
+/home/normak/dev/learn_space/server/src/main/java/core/StatusBoardConfig.java
+/home/normak/dev/learn_space/server/src/main/java/statusBoard/ctr/RestCtr.java
+/home/normak/dev/learn_space/server/src/main/java/util/Printer.java
+/home/normak/dev/learn_space/server/src/main/java/util/Writer.java

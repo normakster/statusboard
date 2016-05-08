@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<body>
+
+	<div th:fragment="pageTitle">
+		<title th:text="${title}"></title>
+	</div>
+
+	<div th:fragment="titleMsg">
+		<h1>
+			Title : <span th:text="${title}"></span>
+		</h1>
+		<h1>
+			Message : <span th:text="${message}"></span>
+		</h1>
+	</div>
+
+	<div id="footer" th:fragment="footer">
+		<p>&copy; 2016 Kameron.Meyer [gmail-com]</p>
+	</div>
+
+	<div th:fragment="testingGround">
+		<div ng-controller="MainCtrl as vm">
+			<label value="">Send Post Data?</label> <input type="checkbox"
+				ng-model="sendData" /> <br /> <label value="">Testing
+				Ground</label> <input type="checkbox" ng-model="testing" /> <br /> <br />
+			<div class="window_control" style="width: 90%;" ng-show="testing">
+				<b><span>Testing Ground</span></b>
+				<div class="window_control" style="width: 90%;" ng-show="testing">
+					{{'page'+JSON.stringify(vm.persons)}}</div>
+			</div>
+		</div>
+	</div>
+
+	<div th:fragment="mainList">
+		<div class="window_control">
+			<table>
+				<thead>
+					<tr>
+						<th class="heading1 item name">Name</th>
+						<th class="heading1 item crntStatus">In/Out</th>
+						<th class="heading1 item eta">E.T.A.</th>
+						<th class="heading1 item location">Location</th>
+						<th class="heading1 item description">Description</th>
+						<th class="heading1 item buttons">[options]</th>
+					</tr>
+				</thead>
+				<tbody ng-repeat="item in persons">
+					<tr ng-hide="item.show">
+						<td class="item name"><span ng-bind="item.name"></span></td>
+						<td class="item crntStatus"><span ng-bind="item.crntStatus"></span></td>
+						<td class="item eta"><span ng-bind="item.eta"></span></td>
+						<td class="item location"><span ng-bind="item.location"></span></td>
+						<td class="item description"><span ng-bind="item.description"></span></td>
+						<td class=""><a href="" ng-click="item.edit()">edit</a></td>
+					</tr>
+					<tr ng-show="item.show">
+						<td><input class="item name" type="text" ng-model="item.name"
+							placeholder="name" /></td>
+						<td><input class="item crntStatus" type="text"
+							ng-model="item.crntStatus" placeholder="status" /></td>
+						<td><input class="item eta" type="text" ng-model="item.eta"
+							placeholder="eta" /></td>
+						<td><input class="item location" type="text"
+							ng-model="item.location" placeholder="location" /></td>
+						<td><input class="item description" type="text"
+							ng-model="item.description" placeholder="description" /></td>
+						<td class="item buttons"><a href="" ng-click="item.save()">save</a></td>
+						<td class="item buttons"><a href="" ng-click="item.remove(persons)">delete</a></td>
+						<td class="item buttons"><a href="" ng-click="item.cancel()">cancel</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<div ng-hide="newItem.show">
+				<button ng-click="newItem.edit()">Add New</button>
+			</div>
+			<div ng-show="newItem.show">
+				<td><input class="item name" type="text"
+					ng-model="newItem.name" placeholder="name" /></td>
+				<td><input class="item crntStatus" type="text"
+					ng-model="newItem.crntStatus" placeholder="status" /></td>
+				<td><input class="item eta" type="text" ng-model="newItem.eta"
+					placeholder="eta" /></td>
+				<td><input class="item location" type="text"
+					ng-model="newItem.location" placeholder="location" /></td>
+				<td><input class="item description" type="text"
+					ng-model="newItem.description" placeholder="description" /></td>
+				<!--td class="item buttons"><a href="" ng-click="addPerson(newItem)">save</a></td-->
+				<td class="item buttons"><a href="" ng-click="newItem.add()">save</a></td>
+				<td class="item buttons"><a href="" ng-click="newItem.cancel()">cancel</a></td>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
